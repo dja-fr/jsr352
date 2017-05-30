@@ -42,7 +42,7 @@ import org.jberet.tx.LocalTransactionManager;
  */
 public final class BatchSEEnvironment implements BatchEnvironment {
 
-    public static final String CONFIG_FILE_NAME = "jberet.properties";
+    public static final String CONFIG_FILE_NAME = System.getenv("file.jberet.property")!=null?System.getenv("JAVA_HOME"):"jberet.properties";
     public static final String JOB_REPOSITORY_TYPE_KEY = "job-repository-type";
     public static final String REPOSITORY_TYPE_IN_MEMORY = "in-memory";
     public static final String REPOSITORY_TYPE_JDBC = "jdbc";
